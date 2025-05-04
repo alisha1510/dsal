@@ -65,25 +65,33 @@ public:
     }
 
     void displayEmployee() {
-        ifstream file(filename, ios::binary);
-        Employee emp;
-        bool found = false;
-    
-        cout << "\n----- Employee List -----\n";
-        while (file.read((char*)&emp, sizeof(Employee))) {
-            found = true;
+    int empID;
+    bool found = false;
+
+    cout << "Enter Employee ID to display: ";
+    cin >> empID;
+
+    ifstream file(filename, ios::binary);
+    Employee emp;
+
+    while (file.read((char*)&emp, sizeof(Employee))) {
+        if (emp.id == empID) {
+            cout << "\n--- Employee Details ---" << endl;
             cout << "Employee ID: " << emp.id << endl;
             cout << "Name       : " << emp.name << endl;
             cout << "Salary     : " << emp.salary << endl;
-            cout << "---------------------------" << endl;
-        }
-    
-        file.close();
-    
-        if (!found) {
-            cout << "No employee records found." << endl;
+            found = true;
+            break;
         }
     }
+
+    file.close();
+
+    if (!found) {
+        cout << "Employee with ID " << empID << " not found." << endl;
+    }
+}
+
     
     
     
