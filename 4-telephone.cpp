@@ -35,7 +35,7 @@ public:
                 }
                 i++;	
             }   
-            cout << "Hash table is full or no space available for this key.\n";x`
+            cout << "Hash table is full or no space available for this key.\n";
         }
     }
 
