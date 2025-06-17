@@ -1,9 +1,11 @@
+//A book consists of chapters, chapters consist of sections and sections consist of subsections. Construct a tree and print the nodes. Find the time and space requirements of your method.
+
 #include<iostream>
 using namespace std;
 
-// Corrected 'struct' and 'class' syntax
+
 struct node {
-    char name[50]; // Increased size to avoid overflow
+    char name[50]; 
     int count;
     struct node* child[10];
 } *root = NULL;
