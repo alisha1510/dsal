@@ -1,3 +1,5 @@
+/*Implement the Heap sort algorithm implemented in Java demonstrating heap data structure 
+    with modularity of programming language*/
 import java.util.*;
 
 class Main {
